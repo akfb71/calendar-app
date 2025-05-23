@@ -1,0 +1,47 @@
+.calendar-card{
+    font-family:Arial;
+    display:flex;
+    flex-direction: column;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    align-items: center;
+    justify-items: center;
+}
+.calendar-head{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:center;
+    font-size: 1.5rem;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap:2rem;
+    justify-items: center;
+    align-items:center;
+    margin:0;
+    padding:1rem;
+}
+.arrow{
+    color: gray;
+    font-size: 1.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+span{
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    list-style: none;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+@media (max-width:600px){
+    .calendar-card{
+        font-size:0.8rem;
+    }
+}

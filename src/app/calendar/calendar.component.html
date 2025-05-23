@@ -1,0 +1,20 @@
+<div class="calendar-card">
+    <div [ngStyle]="{'background-color':'aliceblue'}">
+        <div class="calendar-head">
+            <button class='arrow' (click)="prevMonth()">&lt;</button>  
+            <h3 [ngStyle]="{'text-align':'center'}">{{ monthName }} {{ year }}</h3>
+            <button class='arrow' (click)="nextMonth()">&gt;</button>
+        </div>
+        <div class="grid-container">
+            <span *ngFor="let day of weekdays">{{ day }}</span>
+        </div>
+    </div>
+    <div class="grid-container">
+        <div *ngFor="let date of days" >
+            <span *ngIf='date!==null' [ngStyle]="styleDate(date)" (click)="onDateClick(date)">
+                {{ date }}
+            </span>
+        </div>
+    </div>
+<!-- <month-card></month-card> -->
+</div>
