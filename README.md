@@ -1,5 +1,7 @@
 # Calendar App
 
+<img width="507" alt="Screenshot 2025-05-24 at 1 25 12 PM" src="https://github.com/user-attachments/assets/e03920f1-280d-4724-b978-adca15c37a88" />
+
 This is a simple single page web application that displays a calendar. The calender does the following : 
 *  On page load, the calendar displays the current month in a normal calendar format, with an abbreviated name and year in the header.
 *  The current day of the month are highlighted in gray.
