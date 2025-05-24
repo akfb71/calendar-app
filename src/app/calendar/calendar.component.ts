@@ -24,6 +24,13 @@ export class CalendarComponent implements OnInit {
     this.days = this.generateDays(this.year,this.month);
   }
 
+  ngOnInit(): void {
+    this.selectedDate$.subscribe(date=>{
+      this.selectedDate=date;
+    });
+  }
+
+  // generate the days array for the current month
   generateDays(year:number, month:number):(number|null)[]{
     let monthDays=new Date(year,month+1,0).getDate();
     let firstDay=new Date(year,month,1).getDay();
@@ -31,12 +38,8 @@ export class CalendarComponent implements OnInit {
       i<firstDay?null:i-firstDay+1
     );
   }
-  ngOnInit(): void {
-    this.selectedDate$.subscribe(date=>{
-      this.selectedDate=date;
-    });
-  }
 
+  //styling for date values - gray font for past date, gray background on current and green background on selected dates
   styleDate(date:number):{[key:string]:string}{
     let style:{[key:string]:string}={};
     let currDate=new Date(this.year,this.month,date);
@@ -57,7 +60,7 @@ export class CalendarComponent implements OnInit {
   onDateClick(date:number):void{
     this.selectedDate$.next(new Date(this.year,this.month,date));
   }
-
+  //handler for prev month button
   prevMonth(){
     let prevMonth=new Date(this.year,this.month-1);
     this.month=prevMonth.getMonth();
@@ -66,6 +69,7 @@ export class CalendarComponent implements OnInit {
     this.days=this.generateDays(this.year,this.month);
   }
 
+  //handler for next month button
   nextMonth(){
     let nextMonth=new Date(this.year,this.month+1);
     this.month=nextMonth.getMonth();
